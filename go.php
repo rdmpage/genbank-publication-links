@@ -159,6 +159,9 @@ function do_list($accessions)
 				
 				//echo $sql . "\n";
 				db_put($sql);	
+				
+				$sql = 'UPDATE accession SET done=1 WHERE accession="' . $accession . '";';
+				db_put($sql);	
 			}
 		}
 	}		
@@ -184,13 +187,38 @@ $sql = 'SELECT * FROM accession WHERE accession LIKE "MN369968%" LIMIT 100';
 $page_size = 100;
 $page = 0;
 
+$count = 1;
+
 $done = false;
 while (!$done)
 {
+	$pattern = 'O%';
+	$pattern = 'P%';
+	$pattern = 'M%';
+	$pattern = 'L%';
+	$pattern = 'N%';
+	$pattern = 'K%';
+	$pattern = 'J%';
+	$pattern = 'H%';
+	$pattern = 'G%';
+	$pattern = 'F%';
+	$pattern = 'E%';
+	$pattern = 'D%';
+	$pattern = 'C%';
+	$pattern = 'B%';
+	$pattern = 'A%';		
+	
+	//$pattern = 'GQ200%';
 
 	$sql = 'SELECT accession 
 	FROM accession 
-	LEFT JOIN accession_publication USING(accession) LIMIT ' . $page_size . ' OFFSET ' . $page * $page_size;
+	LEFT JOIN accession_publication USING(accession) 
+	WHERE accession LIKE "' . $pattern . '"
+	AND accession NOT LIKE "%-SUPPRESSED"';
+	
+	$sql .= ' AND done IS NULL';
+	
+	$sql .= ' LIMIT ' . $page_size . ' OFFSET ' . $page * $page_size;
 	
 	echo $sql . "\n";
 					

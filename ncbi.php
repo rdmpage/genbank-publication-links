@@ -363,6 +363,8 @@ function accession_to_bib_pids($accession)
 
 	$xml = get($url);	
 	
+	echo $xml;
+	
 	// did we get XML?
 	if (preg_match('/^\s*<\?xml/', $xml))
 	{		
