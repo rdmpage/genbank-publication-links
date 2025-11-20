@@ -18,16 +18,72 @@ function do_list($accessions)
 		
 		echo "-- $accession\n";
 		
+		$sql = 'UPDATE accession SET done=1 WHERE accession="' . $accession . '";';
+		echo $sql . "\n";
+		db_put($sql);	
+		
+		
 		// Do we have any PIDs for this accession?
 		$pids = accession_to_bib_pids($accession);
 		
 		if (count($pids) > 0)
 		{
 			// Yes
-			// print_r($pids);
+			print_r($pids);
 			
 			echo "-- We have PIDs\n";
 			
+			$obj = new stdclass;
+			
+			// new plan, just score direct matches, attenmpts to "look ahead" and get
+			// other matches generates too many matches that aren't for our target
+			// accessions
+			
+			if (isset($pids['pmid']))
+			{
+				$obj->pmid = $pids['pmid'];
+				
+				if (!isset($obj->id))
+				{
+					$obj->id = $pids['pmid'];
+				}
+			}
+			elseif (isset($pids['doi']))
+			{
+				$obj->doi = $pids['doi'];
+				
+				$obj->doi = preg_replace('/https?:\/\/(dx\.)?doi.org\//', '', $obj->doi);
+				
+				$obj->doi = preg_replace('/doi.org\//', '', $obj->doi);
+				$obj->doi = preg_replace('/doi:/i', '', $obj->doi);
+				
+				if (!isset($obj->id))
+				{
+					$obj->id = $pids['doi'];
+				}
+			}
+			
+			if (isset($obj->id))
+			{
+				// Store publication
+				$sql = obj_to_sql($obj, 'publication');
+				
+				db_put($sql);
+				
+				// Store link
+				$link = new stdclass;
+				
+				$link->accession = $accession;
+				$link->publication = $obj->id ;
+								
+				$sql = obj_to_sql($link, 'accession_publication');
+				
+				echo $sql . "\n";
+				db_put($sql);	
+			}			
+			
+			
+			/*
 			$obj = new stdclass;
 				
 			// Get list of all accessions linked to these PIDs	
@@ -67,7 +123,7 @@ function do_list($accessions)
 				db_put($sql);
 			}			
 			
-				
+			
 			// echo "GIs from PID\n";
 			// print_r($gis);
 
@@ -96,10 +152,17 @@ function do_list($accessions)
 					db_put($sql);			
 				}
 				
+				foreach ($linked_accessions as $acc)
+				{
+					$sql = 'UPDATE accession SET done=1 WHERE accession="' . $acc . '";';
+					echo $sql . "\n";
+					db_put($sql);					
+				}				
 				
 				// Remove these from the list of accessions so we don't try and look these up
 				$list = array_diff($list, $linked_accessions);		
 			}
+			*/
 		}
 		else
 		{
@@ -160,10 +223,10 @@ function do_list($accessions)
 				//echo $sql . "\n";
 				db_put($sql);	
 				
-				$sql = 'UPDATE accession SET done=1 WHERE accession="' . $accession . '";';
-				db_put($sql);	
 			}
 		}
+		
+		
 	}		
 }
 
@@ -184,7 +247,7 @@ $sql = 'SELECT * FROM accession WHERE accession LIKE "MN369968%" LIMIT 100';
 
 // last looked at AB607100
 
-$page_size = 100;
+$page_size = 1000;
 $page = 0;
 
 $count = 1;
@@ -206,7 +269,14 @@ while (!$done)
 	$pattern = 'D%';
 	$pattern = 'C%';
 	$pattern = 'B%';
-	$pattern = 'A%';		
+	$pattern = 'A%';	
+	
+	$pattern = 'MK%';
+	
+	$pattern = 'M%';
+	//$pattern = 'MK12%';	
+	
+	//$pattern = 'AAUJ02000001%';
 	
 	//$pattern = 'GQ200%';
 

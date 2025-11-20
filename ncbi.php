@@ -285,6 +285,9 @@ function get($url, $content_type = '')
 	curl_setopt_array($ch, $opts);
 	$data = curl_exec($ch);
 	$info = curl_getinfo($ch); 
+	
+	//print_r($info);
+	
 	curl_close($ch);
 	
 	return $data;
@@ -345,25 +348,37 @@ function parse_ncbi_date($date_string)
 }
 
 //----------------------------------------------------------------------------------------
-// Get bibliographic PID(s) from accession, return as an array
-function accession_to_bib_pids($accession)
-{
-	$pids = array();
-		
+function accession_to_bib_pids_url($accession, $api_key = '')
+{		
 	$parameters = array(
 		'db' 		=> 'nucleotide',
 		'retmode' 	=> 'xml',
 		'id' 		=> $accession,
-		'api_key'	=> getenv('NCBI_API_KEY'),
 		'seq_start' => 1,
 		'seq_stop' => 1,
 	);
 	
+	if ($api_key != '')
+	{
+		$parameters['api_key'] = $api_key;
+	}
+	
 	$url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?' . http_build_query($parameters);
+
+	return $url;
+}
+
+//----------------------------------------------------------------------------------------
+// Get bibliographic PID(s) from accession, return as an array
+function accession_to_bib_pids($accession)
+{
+	$pids = array();
+	
+	$url = accession_to_bib_pids_url($accession, getenv('NCBI_API_KEY'));
 
 	$xml = get($url);	
 	
-	echo $xml;
+	//echo $xml;
 	
 	// did we get XML?
 	if (preg_match('/^\s*<\?xml/', $xml))
@@ -559,7 +574,11 @@ function pmid_to_gi($pmid)
 			
 	$json = get($url);
 	
+	//echo $json;
+	
 	$obj = json_decode($json);
+	
+	//print_r($obj);
 	
 	if ($obj)
 	{		
@@ -573,7 +592,8 @@ function pmid_to_gi($pmid)
 					{
 						foreach ($linkset->linksetdbs as $linksetdb)
 						{
-							if ($linksetdb->dbto == 'nuccore')
+							if ($linksetdb->dbto == 'nuccore' 
+								&& $linksetdb->linkname == 'linkname') // we just want direct links!
 							{
 								$result->hits = array_merge($result->hits, $linksetdb->links);
 							}

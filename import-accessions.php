@@ -7,6 +7,7 @@ ini_set('memory_limit', '-1');
 
 // get accession numbers and look up
 $small_filename = 'data/accessions.csv';
+$small_filename = 'data/insdc_acs.csv';
 
 $row_count = 0;
 
