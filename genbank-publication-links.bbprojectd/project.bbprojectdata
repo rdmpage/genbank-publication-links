@@ -5,6 +5,7 @@
 	<key>HierarchyData</key>
 	<array>
 		<string>F5F51B5F-89B0-465F-A726-C6186B18C0D3</string>
+		<string>4E7FFD9A-D93D-46EE-8050-FA5FDF61879C</string>
 		<string>95E9DAB6-3334-46B4-A085-9CEBF4F67112</string>
 		<string>B6281D1C-0B94-4B1A-8F2C-65CB9FA08E84</string>
 		<string>7EA8ACAB-0ADB-4374-86C3-08A498B0FA25</string>
@@ -14,6 +15,8 @@
 		<string>2F834258-016D-4614-8707-77D0674A3DFC</string>
 		<string>3BDFE41B-2DB1-45E2-A9BA-379E5D02CF4A</string>
 		<string>0A2A2C86-2014-4D60-B033-2036AA9EF5C9</string>
+		<string>9F36452B-5097-4795-A7DC-F6ADBE4381EA</string>
+		<string>84A4E3A1-0154-42C0-84DA-3C46BC391B73</string>
 	</array>
 	<key>ProjectItems</key>
 	<dict>
@@ -162,6 +165,53 @@
 			<key>ItemType</key>
 			<string>FileReference</string>
 		</dict>
+		<key>4E7FFD9A-D93D-46EE-8050-FA5FDF61879C</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va/gCAAAAAAQQMAAAADwEsM4YkftdelrxSjMA0U1t
+				Kk202ppBmpZNdv5rnbgv9AEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAFAAAAAQEAAHJwYWdlAAAACwAA
+				AAEBAABEZXZlbG9wbWVudAAZAAAAAQEAAGdlbmJhbmst
+				cHVibGljYXRpb24tbGlua3MAAAAKAAAAAQEAAC5naXRp
+				Z25vcmUAABQAAAABBgAAEAAAACAAAAAwAAAARAAAAGgA
+				AAAIAAAABAMAAIRcAAAAAAAACAAAAAQDAACWxgMAAAAA
+				AAgAAAAEAwAAWSklAAAAAAAIAAAABAMAAG8fnC0AAAAA
+				CAAAAAQDAADilhOLAAAAABQAAAABBgAAmAAAAKgAAAC4
+				AAAAyAAAANgAAAAIAAAAAAQAAEHHPq8aYGwSGAAAAAEC
+				AAABAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMA
+				AAMAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxl
+				Oi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAA
+				kIKW5wAAAAgAAAAABAAAQccoJq6AAAAkAAAAAQEAAEVF
+				REJDNDk1LURGNTItNDU2QS1CNDMxLUZCNjA3QkYwNEFE
+				MRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAA
+				AQAAAAEBAAAvAAAAAAAAAAEFAADMAAAA/v///wEAAAAA
+				AAAAEAAAAAQQAAB8AAAAAAAAAAUQAADoAAAAAAAAABAQ
+				AAAUAQAAAAAAAEAQAAAEAQAAAAAAAAIgAADgAQAAAAAA
+				AAUgAABQAQAAAAAAABAgAABgAQAAAAAAABEgAACUAQAA
+				AAAAABIgAAB0AQAAAAAAABMgAACEAQAAAAAAACAgAADA
+				AQAAAAAAADAgAADsAQAAAAAAAAHAAAA0AQAAAAAAABHA
+				AAAgAAAAAAAAABLAAABEAQAAAAAAABDQAAAEAAAAAAAA
+				AA==
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/rpage/Development/genbank-publication-links/.gitignore</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./.gitignore</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>.gitignore</string>
+			<key>ItemType</key>
+			<string>FileReference</string>
+		</dict>
 		<key>71F754FE-B190-43B8-9E84-DBFBB4437ED8</key>
 		<dict>
 			<key>ItemData</key>
@@ -258,6 +308,54 @@
 			<key>ItemType</key>
 			<string>FileReference</string>
 		</dict>
+		<key>84A4E3A1-0154-42C0-84DA-3C46BC391B73</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9vazgDAAAAAAQQMAAAAGtntJw9s+yaJgmv3wxH3loR
+				7BxPl1BW7RhM7XiQKzFvKAIAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAFAAAAAQEAAHJwYWdlAAAACwAA
+				AAEBAABEZXZlbG9wbWVudAAZAAAAAQEAAGdlbmJhbmst
+				cHVibGljYXRpb24tbGlua3MAAAAPAAAAAQEAAGdlbmJh
+				bmstcmRmLnBocAAUAAAAAQYAABAAAAAgAAAAMAAAAEQA
+				AABoAAAACAAAAAQDAACEXAAAAAAAAAgAAAAEAwAAlsYD
+				AAAAAAAIAAAABAMAAFkpJQAAAAAACAAAAAQDAABvH5wt
+				AAAAAAgAAAAEAwAAyQqklAAAAAAUAAAAAQYAAJwAAACs
+				AAAAvAAAAMwAAADcAAAACAAAAAAEAABBxz20JnRs3hgA
+				AAABAgAAAQAAAAAAAAAPAAAAAAAAAAAAAAAAAAAACAAA
+				AAQDAAADAAAAAAAAAAQAAAADAwAA9QEAAAgAAAABCQAA
+				ZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAE
+				AwAAAJCClucAAAAIAAAAAAQAAEHHKCaugAAAJAAAAAEB
+				AABFRURCQzQ5NS1ERjUyLTQ1NkEtQjQzMS1GQjYwN0JG
+				MDRBRDEYAAAAAQIAAIEAAAABAAAA7xMAAAEAAAAAAAAA
+				AAAAAAEAAAABAQAALwAAAAAAAAABBQAAGgAAAAEBAABO
+				U1VSTERvY3VtZW50SWRlbnRpZmllcktleQAABAAAAAMD
+				AAD9QTQA2AAAAP7///8BAAAAAAAAABEAAAAEEAAAgAAA
+				AAAAAAAFEAAA7AAAAAAAAAAQEAAAGAEAAAAAAABAEAAA
+				CAEAAAAAAAACIAAA5AEAAAAAAAAFIAAAVAEAAAAAAAAQ
+				IAAAZAEAAAAAAAARIAAAmAEAAAAAAAASIAAAeAEAAAAA
+				AAATIAAAiAEAAAAAAAAgIAAAxAEAAAAAAAAwIAAA8AEA
+				AAAAAAABwAAAOAEAAAAAAAARwAAAIAAAAAAAAAASwAAA
+				SAEAAAAAAAAQ0AAABAAAAAAAAAD4AQCAHAIAAAAAAAA=
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/rpage/Development/genbank-publication-links/genbank-rdf.php</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./genbank-rdf.php</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>genbank-rdf.php</string>
+			<key>ItemType</key>
+			<string>FileReference</string>
+		</dict>
 		<key>95E9DAB6-3334-46B4-A085-9CEBF4F67112</key>
 		<dict>
 			<key>ItemData</key>
@@ -302,6 +400,54 @@
 			</dict>
 			<key>ItemName</key>
 			<string>env-template.php</string>
+			<key>ItemType</key>
+			<string>FileReference</string>
+		</dict>
+		<key>9F36452B-5097-4795-A7DC-F6ADBE4381EA</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9vazQDAAAAAAQQMAAAABehFFF3DH3dQDTE6QHrB+ZO
+				rhEpAxNg9TzU8b2P3JObJAIAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAFAAAAAQEAAHJwYWdlAAAACwAA
+				AAEBAABEZXZlbG9wbWVudAAZAAAAAQEAAGdlbmJhbmst
+				cHVibGljYXRpb24tbGlua3MAAAAMAAAAAQEAAGNyb3Nz
+				cmVmLnBocBQAAAABBgAAEAAAACAAAAAwAAAARAAAAGgA
+				AAAIAAAABAMAAIRcAAAAAAAACAAAAAQDAACWxgMAAAAA
+				AAgAAAAEAwAAWSklAAAAAAAIAAAABAMAAG8fnC0AAAAA
+				CAAAAAQDAAD5HeHoAAAAABQAAAABBgAAmAAAAKgAAAC4
+				AAAAyAAAANgAAAAIAAAAAAQAAEHHZ7jEk8uCGAAAAAEC
+				AAABAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMA
+				AAMAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxl
+				Oi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAA
+				kIKW5wAAAAgAAAAABAAAQccoJq6AAAAkAAAAAQEAAEVF
+				REJDNDk1LURGNTItNDU2QS1CNDMxLUZCNjA3QkYwNEFE
+				MRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAA
+				AQAAAAEBAAAvAAAAAAAAAAEFAAAaAAAAAQEAAE5TVVJM
+				RG9jdW1lbnRJZGVudGlmaWVyS2V5AAAEAAAAAwMAAJND
+				NADYAAAA/v///wEAAAAAAAAAEQAAAAQQAAB8AAAAAAAA
+				AAUQAADoAAAAAAAAABAQAAAUAQAAAAAAAEAQAAAEAQAA
+				AAAAAAIgAADgAQAAAAAAAAUgAABQAQAAAAAAABAgAABg
+				AQAAAAAAABEgAACUAQAAAAAAABIgAAB0AQAAAAAAABMg
+				AACEAQAAAAAAACAgAADAAQAAAAAAADAgAADsAQAAAAAA
+				AAHAAAA0AQAAAAAAABHAAAAgAAAAAAAAABLAAABEAQAA
+				AAAAABDQAAAEAAAAAAAAAPQBAIAYAgAAAAAAAA==
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/rpage/Development/genbank-publication-links/crossref.php</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./crossref.php</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>crossref.php</string>
 			<key>ItemType</key>
 			<string>FileReference</string>
 		</dict>

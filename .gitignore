@@ -1,2 +1,7 @@
 .DS_Store
 env.php
+/junk/
+/output/
+/data/*.csv
+/data/*.sql
+

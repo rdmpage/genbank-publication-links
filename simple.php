@@ -23,6 +23,17 @@ function do_list($accessions)
 		
 		echo "$accession\n";
 		
+		// Have we done this already?
+		$sql = 'SELECT * FROM accession WHERE accession="' . $accession . '" AND done=1 LIMIT 1;';
+		// echo $sql . "\n";
+		$data = db_get($sql);
+		
+		if (count($data) == 1)	
+		{
+			echo "Done already\n";
+			continue;
+		}
+		
 		// flag that we have done this accession 
 		if (1)
 		{
@@ -155,7 +166,7 @@ function do_list($accessions)
 // get accession numbers and look up
 $filename = 'test.tsv';
 
-$batch_size = 100;
+$batch_size = 1;
 $batch = array();
 
 $file_handle = fopen($filename, "r");
@@ -168,7 +179,7 @@ while (!feof($file_handle))
 	if (count($batch) == $batch_size)
 	{
 		// do stuff
-		print_r($batch);
+		//print_r($batch);
 		
 		do_list($batch);
 		
