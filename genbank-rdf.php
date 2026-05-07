@@ -79,8 +79,7 @@ foreach ($data as $row)
 		
 		// clean DOI
 		
-		// badness
-		
+		// badness		
 		$doi = str_replace('https://www.tandfonline.com/doi/full/', '', $doi);
 		$doi = str_replace('https://onlinelibrary.wiley.com/doi/', '', $doi);
 		$doi = str_replace('https://www.onlinelibrary.wiley.com/doi/', '', $doi);
@@ -90,15 +89,13 @@ foreach ($data as $row)
 		
 		$doi = preg_replace('/^DOI:?\s+/', '', $doi);
 		$doi = preg_replace('/\s+/', '', $doi);
-		
-		
+				
 		$doi = strtolower($doi);
 		$doi = str_replace('<', '%3c', $doi);
 		$doi = str_replace('>', '%3e', $doi);
 		$doi = str_replace('[', '%5b', $doi);
 		$doi = str_replace(']', '%5d', $doi);
-		
-			
+					
 		$triple = array(
 			'<https://doi.org/' . $doi . '>',
 			'<http://schema.org/citation>',
@@ -181,8 +178,11 @@ foreach ($data as $row)
 		{
 			echo join(" ", $triple) . " .\n";
 		}
-		
-		*/
+	}
+	else
+	{
+		// to do: URL
+	
 	}
 }
 
