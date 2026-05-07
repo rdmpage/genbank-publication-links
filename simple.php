@@ -23,24 +23,34 @@ function do_list($accessions)
 		
 		echo "$accession\n";
 		
-		// Have we done this already?
-		$sql = 'SELECT * FROM accession WHERE accession="' . $accession . '" AND done=1 LIMIT 1;';
-		// echo $sql . "\n";
+		// Do we have this accession?
+		$sql = 'SELECT * FROM accession WHERE accession="' . $accession . '" LIMIT 1;';
+		echo $sql . "\n";
 		$data = db_get($sql);
 		
-		if (count($data) == 1)	
+		if (count($data) == 0)
 		{
-			echo "Done already\n";
-			continue;
-		}
-		
-		// flag that we have done this accession 
-		if (1)
-		{
-			$sql = 'UPDATE accession SET done=1 WHERE accession="' . $accession . '";';
+			// don't have this, so add it
+			$sql = 'INSERT INTO accession(accession, done) VALUES("' . $accession . '", "1")'; 
 			echo $sql . "\n";
-			db_put($sql);	
+			db_put($sql);				
 		}
+		else
+		{
+			// Have it, have we done this already?
+			if (isset($data[0]->done))
+			{
+				echo "Done already\n";
+				continue;
+			}
+			else
+			{
+				// flag that we have done this accession 
+				$sql = 'UPDATE accession SET done=1 WHERE accession="' . $accession . '";';
+				echo $sql . "\n";
+				db_put($sql);	
+			}			
+		}		
 		
 		// Do we have any PIDs for this accession?
 		$pids = accession_to_bib_pids($accession);
@@ -165,6 +175,8 @@ function do_list($accessions)
 //----------------------------------------------------------------------------------------
 // get accession numbers and look up
 $filename = 'test.tsv';
+
+$filename = 'insdc_acs_new_27Sep2024_to_26Dec2025.tsv';
 
 $batch_size = 1;
 $batch = array();

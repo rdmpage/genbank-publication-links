@@ -75,6 +75,7 @@ function do_list($accessions)
 				
 				$link->accession = $accession;
 				$link->publication = $obj->id ;
+				$link->source = accession_to_bib_pids_url($accession);
 								
 				$sql = obj_to_sql($link, 'accession_publication');
 				
@@ -279,6 +280,8 @@ while (!$done)
 	//$pattern = 'AAUJ02000001%';
 	
 	//$pattern = 'GQ200%';
+	
+	$pattern = 'GU99744%';
 
 	$sql = 'SELECT accession 
 	FROM accession 
@@ -288,7 +291,7 @@ while (!$done)
 	
 	$sql .= ' AND done IS NULL';
 	
-	$sql .= ' LIMIT ' . $page_size . ' OFFSET ' . $page * $page_size;
+	$sql .= ' LIMIT ' . $page_size . ' OFFSET ' . $page * $page_size;		
 	
 	echo $sql . "\n";
 					
