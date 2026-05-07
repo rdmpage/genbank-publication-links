@@ -57,6 +57,12 @@ $sql = 'SELECT * FROM no_doi_but_with_metadata WHERE container="Afr. Invertebr."
 //$sql = 'SELECT * FROM no_doi_but_with_metadata WHERE container LIKE "V%" LIMIT 100';
 $sql = 'SELECT * FROM no_doi_but_with_metadata LIMIT 10000';
 
+$container = 'Proc. R. Soc. Lond., B, Biol. Sci.';
+$container = 'Proc. Entomol. Soc. Wash.';
+$sql = 'SELECT * FROM publication WHERE container="' . $container  . '" AND doi IS NULL AND rdmp_doi IS NULL AND rdmp_url IS NULL;';
+
+
+//$sql = 'SELECT * FROM publication WHERE id="d2b835fd126b5972be0e4907abd84bb4"';
 
 
 $data = db_get($sql);
@@ -103,6 +109,25 @@ foreach ($data as $obj)
 					$have_keys[] = $k;
 					break;
 					
+				case 'container-title':
+					$container = $csl->{$k};
+					switch ($container)
+					{
+						case 'Proc. R. Soc. Lond., B, Biol. Sci.':
+							$container = 'Proceedings of the Royal Society of London. Series B: Biological Sciences';
+							break;
+
+						case 'Proc. Entomol. Soc. Wash.':
+							$container = 'Proceedings of the Entomological Society of Washington';
+							break;
+					
+						default:
+							break;							
+					}
+					$terms[] = $container . '.';
+					$have_keys[] = $k;
+					break;
+					
 				default:
 					$terms[] = $csl->{$k};
 					
@@ -128,7 +153,7 @@ foreach ($data as $obj)
 
 	$response = json_decode($json);
 	
-	// print_r($response);
+	//print_r($response);
 	
 	if ($response)
 	{
